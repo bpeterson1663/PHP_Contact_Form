@@ -24,7 +24,8 @@
         }
         else{
           //checks to see mail worked and then echos the result in the form
-          if(mail("bpeterson1663@gmail.com","Comment From Website!", "Name: ".$_POST['name']." Email: ".$_POST['email']." Comment: ".$_POST['comment'])){
+          $mail = mail("bpeterson1663@gmail.com","Comment From Website!", "Name: ".$_POST['name']." Email: ".$_POST['email']." Comment: ".$_POST['comment'])
+          if($mail){
             $result='<div class="alert alert-success"><strong>Thank you!</strong> We will be in touch.</div>';
           }else {
             $result='<div class="alert alert-danger"><strong>Sorry, there was an error with sending your message. Please try again.</strong></div>';
